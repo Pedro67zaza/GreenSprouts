@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenSprouts - Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.6rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-login {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-login:hover {
+            background: white;
+            color: #2d5016;
+        }
+
+        .btn-signup {
+            background: #ffd700;
+            color: #2d5016;
+        }
+
+        .btn-signup:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #2d5016;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .btn-cta {
+            background: #4a7c2c;
+            color: white;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .btn-cta:hover {
+            background: #2d5016;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2d5016;
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #2d5016;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d5016;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .nav-links a.active {
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">GreenSprouts</a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="features.html">Features</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="auth-buttons">
+                <a href="login.php" class="btn btn-login">Log In</a>
+                <a href="login.php" class="btn btn-signup">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to GreenSprouts</h1>
+            <p>Revolutionizing the way you grow. Our innovative system brings efficiency and sustainability to your fingertips.</p>
+            <a href="login.php" class="btn btn-cta">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Features Preview Section -->
+    <section class="features">
+        <h2 class="section-title">Why Choose GreenSprouts?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast & Efficient</h3>
+                <p>Our system is designed to maximize productivity. Get results faster than ever before.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Secure & Reliable</h3>
+                <p>Built with enhanced security to protect your data and ensure uninterrupted service.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Agricultural Resources</h3>
+                <p>Access a rich plant repository, educational videos, and insightful articles to enhance your farming knowledge.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 GreenSprouts. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="Privacy&Policy.pdf">Privacy Policy</a>
+                <a href="Terms&Conditions.pdf">Terms of Service</a>
+            </div>
+            <p>Contact: GreenSproutsContact25@gmail.com | +6 017 6085762</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+<!-- 
+========================================
+ADDITIONAL PAGES YOU NEED TO CREATE:
+========================================
+
+📄 FEATURES PAGE (features.html)
+Copy the HTML structure above and replace the hero and features sections with more detailed feature information.
+
+📄 ABOUT US PAGE (about.html)
+Copy the HTML structure and add your company story, mission, team information, and history.
+
+📄 CONTACT PAGE (contact.html)
+Copy the HTML structure and add a contact form with fields for name, email, message, and a submit button.
+
+📄 LOGIN PAGE (login.html)
+Create a page with a login form (email/username and password fields).
+
+📄 SIGNUP PAGE (signup.html)
+Create a page with a registration form (name, email, password, confirm password fields).
+
+📄 PRIVACY POLICY PAGE (privacy.html)
+Add your privacy policy content.
+
+📄 TERMS OF SERVICE PAGE (terms.html)
+Add your terms of service content.
+
+All pages should use the same navigation bar and footer structure shown above.
+Simply copy this template and modify the main content section for each page.
+-->

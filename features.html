@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenSprouts - Features</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .nav-links a.active {
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 0.25rem;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.6rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-login {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-login:hover {
+            background: white;
+            color: #2d5016;
+        }
+
+        .btn-signup {
+            background: #ffd700;
+            color: #2d5016;
+        }
+
+        .btn-signup:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            color: #2d5016;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            align-items: center;
+        }
+
+        .feature-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .feature-content {
+            flex: 1;
+        }
+
+
+        .feature-icon {
+            font-size: 5rem;
+        }
+
+        .feature-content h2 {
+            color: #2d5016;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature-content h2 .icon {
+            font-size: 2.5rem;
+        }
+
+        .feature-content p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .feature-highlights {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .feature-highlights li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #666;
+        }
+
+        .feature-highlights li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4a7c2c;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-cta {
+            background: #ffd700;
+            color: #2d5016;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .btn-cta:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #2d5016;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .feature-item,
+            .feature-item:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .feature-content h2 {
+                font-size: 1.5rem;
+            }
+
+
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">GreenSprouts</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="features.html" class="active">Features</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="auth-buttons">
+                <a href="login.php" class="btn btn-login">Log In</a>
+                <a href="login.php" class="btn btn-signup">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Powerful Features for Plant Lovers</h1>
+        <p>Everything you need to track, learn, and grow with confidence</p>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="features-container">
+            
+            <!-- Feature 1: Personal Digital Logbook -->
+            <div class="feature-item">
+                <div class="feature-content">
+                    <h2><span class="icon">📓</span> Personal Digital Logbook</h2>
+                    <p>Keep track of your gardening journey with our comprehensive digital logbook. Document every milestone, observation, and achievement in one convenient place.</p>
+                    <ul class="feature-highlights">
+                        <li>Record daily observations and plant care activities</li>
+                        <li>Add photos to track visual progress over time</li>
+                    </ul>
+                </div>
+        
+            </div>
+
+            <!-- Feature 2: Plant Repository -->
+            <div class="feature-item">
+                <div class="feature-content">
+                    <h2><span class="icon">🔍</span> Plant Repository & Search</h2>
+                    <p>Access our extensive database of plants with detailed information at your fingertips. Search, discover, and learn about thousands of plant species.</p>
+                    <ul class="feature-highlights">
+                        <li>Comprehensive database with thousands of plant species</li>
+                        <li>Detailed care instructions and growing requirements</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Feature 3: Resources & Library -->
+            <div class="feature-item">
+                <div class="feature-content">
+                    <h2><span class="icon">📚</span> Resources & Library</h2>
+                    <p>Expand your knowledge with our curated collection of articles, guides, and tutorials. Learn from experts and fellow plant enthusiasts.</p>
+                    <ul class="feature-highlights">
+                        <li>Extensive library of how-to guides and tutorials</li>
+                        <li>Expert articles on plant care, pest management, and troubleshooting</li>
+                        <li>Video tutorials and step-by-step instructions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Feature 4: Community Feed -->
+            <div class="feature-item">
+                <div class="feature-content">
+                    <h2><span class="icon">🌐</span> Community Feed</h2>
+                    <p>Connect with a vibrant community of plant enthusiasts. Share your successes, and find inspiration from gardeners around the world.</p>
+                    <ul class="feature-highlights">
+                        <li>Share photos and updates of your plants</li>
+                        <li>Embark upon the journey full of other flora enthusiasts</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Feature 5: AI Chatbot Assistant -->
+            <div class="feature-item">
+                <div class="feature-content">
+                    <h2><span class="icon">🤖</span> AI Chatbot Assistant</h2>
+                    <p>Get instant answers to your plant care questions with our intelligent AI assistant. Available 24/7 to help you troubleshoot problems and provide personalized advice.</p>
+                    <ul class="feature-highlights">
+                        <li>Instant responses to plant care questions</li>
+                        <li>Diagnose plant problems from descriptions</li>
+                        <li>Learn about plant diseases, pests, and solutions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Feature 6: Plant Growth Statistics -->
+            <div class="feature-item">
+                <div class="feature-content">
+                    <h2><span class="icon">📊</span> Plant Growth Statistics</h2>
+                    <p>Track and visualize your plants' growth with detailed statistics and beautiful charts. Make data-driven decisions to optimize your garden's success.</p>
+                    <ul class="feature-highlights">
+                        <li>Visual charts and graphs of plant growth over time</li>
+                        <li>Track height, width, and other growth metrics</li>
+                        <li>Identify patterns and optimize care</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <h2>Ready to Transform Your Gardening Experience?</h2>
+        <p>Join thousands of plant lovers who are already using GreenSprouts to grow better.</p>
+        <a href="login.php" class="btn btn-cta">Get Started</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 GreenSprouts. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="Privacy&Policy.pdf">Privacy Policy</a>
+                <a href="Terms&Conditions.pdf">Terms of Service</a>
+            </div>
+            <p>Contact: GreenSproutsContact25@gmail.com | +6 017 6085762</p>
+        </div>
+    </footer>
+</body>
+</html>

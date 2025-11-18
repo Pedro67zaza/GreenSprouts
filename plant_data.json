@@ -1,0 +1,29 @@
+{
+  "pid": "acer buergerianum",
+  "display_pid": "Acer buergerianum",
+  "alias": "acer buergerianum",
+  "category": "Aceraceae, Acer",
+  "max_light_mmol": 7200,
+  "min_light_mmol": 3000,
+  "max_light_lux": 75000,
+  "min_light_lux": 2800,
+  "max_temp": 35,
+  "min_temp": 5,
+  "max_env_humid": 80,
+  "min_env_humid": 30,
+  "max_soil_moist": 60,
+  "min_soil_moist": 15,
+  "max_soil_ec": 2000,
+  "min_soil_ec": 350,
+  "image_url": "https://opb-img.plantbook.io/acer%20buergerianum.jpg",
+  "common_names": [
+    {
+      "name": "Acer lingii",
+      "language_code": "en"
+    },
+    {
+      "name": "Клён трёхраздельный",
+      "language_code": "ru"
+    }
+  ]
+}
